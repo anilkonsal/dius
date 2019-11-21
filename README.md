@@ -1,4 +1,10 @@
-# Steps
+# About
+Project has been written using javascript (ES6) with jest unit tests
+
+## Prerequisite
+Install nodejs version > 6 on your system
+
+## Steps
 1. Clone the repo
 2. on the command line, change into the cloned repo directory
 3. run `npm i`
