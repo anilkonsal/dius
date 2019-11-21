@@ -7,12 +7,22 @@ class Checkout {
     this.items = [];
   }
 
-  scan(item) {
+  /**
+   * 
+   * @param string item 
+   * @returns void
+   */
+  scan(item='') {
     this.items.push(item);
   }
 
-
-  processBulkBuy(pricingRule, count) {
+  /**
+   * 
+   * @param Object pricingRule 
+   * @param Number count 
+   * @returns Number
+   */
+  processBulkBuy(pricingRule={}, count=0) {
     const { rule: { payFor, buy, discountPrice} } = pricingRule;
     if (payFor) {
       const factor = Math.floor(count / Number(buy));
@@ -23,13 +33,21 @@ class Checkout {
     }
   }
 
-  processFree(pricingRule, count) {
+  /**
+   * 
+   * @param Object pricingRule 
+   * @param Number count 
+   * @returns Number
+   */
+  processFree(pricingRule = {}, count=0) {
     const { rule: { freeWith: freeItemCode } } = pricingRule;
     const freeWithItemesCount = this.items.filter(i => i === freeItemCode).length;
     return (count - freeWithItemesCount) * pricingRule.price;    
   }
 
-
+  /**
+   * @returns Number
+   */
   total() {
     if (!this.items.length) throw new Error('No item scanned!');
 
