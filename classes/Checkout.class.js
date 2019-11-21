@@ -73,6 +73,14 @@ class Checkout {
     });
     return totalAmt.toFixed(2);
   }
+
+  /**
+   * @returns void
+   */
+  clear() {
+    this.items = [];  
+  }
+
 }
 
 module.exports = Checkout;

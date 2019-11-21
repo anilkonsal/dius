@@ -35,6 +35,16 @@ const pricingRules = {
 const co = new Checkout(pricingRules);
 
 co.scan('atv');
+co.scan('atv');
+co.scan('atv');
+co.scan('vga');
+
+let total = co.total();
+console.log(total);
+
+co.clear();
+
+co.scan('atv');
 co.scan('ipd');
 co.scan('ipd');
 co.scan('atv');
@@ -42,7 +52,16 @@ co.scan('ipd');
 co.scan('ipd');
 co.scan('ipd');
 
+total = co.total();
 
-const total = co.total();
+console.log(total);
+
+co.clear();
+
+co.scan('mbp');
+co.scan('vga');
+co.scan('ipd');
+
+total = co.total();
 
 console.log(total);
