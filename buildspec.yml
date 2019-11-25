@@ -1,3 +1,20 @@
+version: 0.2
+
+env:
+  variables:
+    NODE_ENV: "development"
+
 phases:
-  test:
-    commands: npx jest
+  install:
+    runtime-versions:
+      nodejs: 12
+    commands:
+      - npm install -g jest
+
+  pre_build:
+    commands:
+      - npm install
+
+  build:
+    commands:
+      - npm test
