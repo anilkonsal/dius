@@ -210,7 +210,7 @@ describe('Checkout', () => {
       co.scan('ipd');
       co.scan('ipd');
 
-      const expected = 2718.95;
+      const expected = 27181.95;
       
       expect(co.total()).toEqual(expected.toFixed(2));
     });
